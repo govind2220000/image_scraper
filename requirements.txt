@@ -1,0 +1,4 @@
+selenium>=3.141.0 
+flask>=2.0.1
+requests==2.22.0
+flask==3.0.1
