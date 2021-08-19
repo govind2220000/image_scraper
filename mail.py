@@ -5,8 +5,8 @@ import configparser
 def send_email(receiver,msg):
     settings = configparser.ConfigParser()
     settings.read("config.ini")
-    sender = settings["MAIL"]["EMAIL"]       #"accscrapper@gmail.com"
-    password = settings["MAIL"]["PASSWORD"]  #"mdfexvcegncexkqq"
+    sender = settings["MAIL"]["EMAIL"]       
+    password = settings["MAIL"]["PASSWORD"]  
     
     """
     print(sender)
