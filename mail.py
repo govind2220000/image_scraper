@@ -1,12 +1,20 @@
 import smtplib
 from logger.auto_logger import autolog
+import configparser
 
 def send_email(receiver,msg):
+    settings = configparser.ConfigParser()
+    settings.read("config.ini")
+    sender = settings["MAIL"]["EMAIL"]       #"accscrapper@gmail.com"
+    password = settings["MAIL"]["PASSWORD"]  #"mdfexvcegncexkqq"
+    
+    """
+    print(sender)
+    print(password)
+    print(settings.get("MAIL","SMTP", fallback='smtp.gmail.com'))    
+    """
 
-    sender = "govindbgmi@gmail.com"
-    password = "govind456123"
-
-    server = smtplib.SMTP('smtp.gmail.com',  587)
+    server = smtplib.SMTP(settings.get("MAIL","SMTP", fallback='smtp.gmail.com'), settings.get("MAIL","SMTP_PORT", fallback=587))
     server.starttls()
     autolog("Sending Mail...")
     message = f"""
@@ -17,5 +25,7 @@ def send_email(receiver,msg):
         server.login(sender,password)
         server.sendmail(sender,receiver,message)
         autolog("Mail Sent Successfully")       
-    except:
-        autolog("Sending Failed.", 3)
+    except Exception as e:
+        autolog(f"Sending Failed. {e}", 3)
+
+#send_email("sreejithsubhash198@gmail.com","jhasdvg")
