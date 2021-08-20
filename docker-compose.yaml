@@ -1,0 +1,13 @@
+version: "3.3"
+services: 
+    flask:
+        build: .
+        ports:
+                - target: 5000
+                  published: 5000
+                  protocol: tcp
+    
+        volumes:
+                - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket 
+                - /dev/shm:/dev/shm
+        network_mode: host
