@@ -25,7 +25,7 @@ class Webscraper:
         options.add_argument('--disable-gpu')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--no-sandbox')
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = webdriver.Chrome(executable_path = "chromedriver.exe",options=options)
 
 
     def search_string(self, data):
@@ -41,6 +41,9 @@ class Webscraper:
         """
 
         self.data = data
+        if not isdir("tmp"):
+            mkdir("tmp")
+
         if not isdir(f"tmp/{self.data}"):
             mkdir("tmp/"+self.data)
 

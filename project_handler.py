@@ -7,6 +7,23 @@ from mail import send_email
 
 count = 1
 
+def delete_tmp(data):
+    '''
+    DELETES SCRAPED DATA FROM TMP FOLDER
+    '''
+    import os, shutil
+    folder = 'tmp'
+    if data in os.listdir(folder):
+        file_path = os.path.join(folder, data)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            autolog('Failed to delete %s. Reason: %s' % (file_path, e), 3)
+
+
 def upload_data(email, data):
 
     '''
@@ -35,7 +52,7 @@ def upload_data(email, data):
             upload_data(data)
 
         else:
-            autolog("Sending failed.",3)
+            autolog(f"Sending failed. {e}",3)
     finally:
         autolog("closed file")
 
@@ -70,8 +87,12 @@ def run_scrapper(email, data, count) -> None:
 
         upload_data(email, data)
         
-    except:
-        autolog("Scraping failed.",3)
+    except Exception as e:
+        autolog(f"Scraping failed. {e}",3)
+    finally:
+        autolog("Deleting scraped files...")
+        delete_tmp(data)
+        autolog("Deleted.")
    
 
 #run_scrapper("lirawi2547@fada55.com","qwe",10)
