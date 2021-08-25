@@ -9,6 +9,10 @@ count = 1
 
 def upload_data(email, data):
 
+    '''
+    UPLOADS DATA IN ZIP FORMAT ON ANONFILES.COM
+    '''
+
     autolog("inside upload_data function")
     global count
     url = "https://api.anonfiles.com/upload"
@@ -38,9 +42,10 @@ def upload_data(email, data):
 
 
 def run_scrapper(email, data, count) -> None:
-    global is_fetching, image
-    is_fetching = False
     
+    '''
+    SCRAPING THE IMAGES FROM CHROME USING SELENIUM
+    '''
 
     autolog("Opening chrome")
     try:

@@ -1,7 +1,9 @@
 import inspect, logging
 
 def autolog(message, warn = 1):
-    "Automatically log the current function details."
+    '''
+    Automatically log the current function details.
+    '''
 
     func = inspect.currentframe().f_back.f_code
     file_name     = func.co_filename

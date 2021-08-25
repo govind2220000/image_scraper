@@ -2,15 +2,23 @@ from datetime import time
 from flask import Flask, request, render_template, redirect
 import time, datetime
 import threading
- 
+from os.path import isfile
+
 from project_handler import run_scrapper
 from logger.auto_logger import autolog
 
-#s.enter()
+if not isfile("config.ini"):
+    autolog("Cannot find config,ini...",3)
+    autolog("Closing app.",3)
+    exit(2)
 
 def make_epoch_time(combined_time):
+    '''
+    CONVERTS TO EPOCH TIME
+    '''
     t = time.mktime(datetime.datetime.strptime(combined_time,"%Y-%m-%d:%H:%M").timetuple())
     return t
+    
 
 app = Flask(__name__)
 
