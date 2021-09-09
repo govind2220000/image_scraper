@@ -36,15 +36,15 @@ sudo docker-compose up
 ### Using Python
 1\. Clone the project using 
 ```sh
-cd image_scraper
 git clone https://github.com/govind2220000/image_scraper.git
 ```
 2\. Install dependencies
-```
+```sh
+cd image_scraper
 pip install -r requirements.txt
 ```
 3\. Run application
-```
+```sh
 python3 web.py
 ```    
     
