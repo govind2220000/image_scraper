@@ -5,7 +5,7 @@
 Python Image scrapper can help in gathering huge dataset of images for any custom keyword. This helps save time and gather unique images for any keyword. Gathered images will be uploaded to [anonfiles.com](https://anonfiles.com) and the link will be emailed to the user.
 
 ## Demo
-![](https://cdn.discordapp.com/attachments/545957572776296449/885482323854893066/Untitled_video_Made_with_Clipchamp_1.gif)
+![](static/images/demo.gif)
 
 ## Features
 
