@@ -14,7 +14,8 @@ RUN apk add chromium chromium-chromedriver
 COPY ./requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY ./config.ini .
+COPY ./src/ ./src
 EXPOSE 5000
 ENTRYPOINT [ "python3" ]
-CMD [ "web.py" ]
+CMD [ "-m", "src" ]
