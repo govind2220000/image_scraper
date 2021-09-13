@@ -47,7 +47,7 @@ pip install -r requirements.txt
 ```
 3\. Run application
 ```sh
-python3 web.py
+python3 -m src
 ```    
     
 
