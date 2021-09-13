@@ -21,13 +21,15 @@ Python Image scrapper can help in gathering huge dataset of images for any custo
 1\.  Clone the project using 
 ```sh
 git clone https://github.com/govind2220000/image_scraper.git
-```    
-2\.  Build the project using Docker
+``` 
+2\.  Rename `example.config.ini` to `config.ini`. Fill it with appropriate values.
+
+3\.  Build the project using Docker
 ```sh  
 cd image_scraper
 sudo docker-compose build
 ```   
-3\.  Deploy the project
+4\.  Deploy the project
 ```sh 
 sudo docker-compose up
 ```
