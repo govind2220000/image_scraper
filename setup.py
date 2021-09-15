@@ -11,13 +11,14 @@ setup(
    name='webscp',
    version='1.0.3',
    description='Scrape and email modules to an email id.',
-   author='Govind Choudhary <govind2220000@gmail.com>, Sreejith Subhash <sreejithsubhash198@gmail.com>',
+   author='Govind Choudhary, Sreejith Subhash',
+   author_email="govind2220000@gmail.com, sreejithsubhash198@gmail.com",
+   long_description=long_description,   
    packages=find_packages(),  #same as name
    install_requires=['wheel', 
    'selenium==3.141.0',
    'Flask==2.0.1',
    'requests==2.22.0'], #external packages as dependencies
-   long_description=long_description,
    python_requires='>=3',
    project_urls={
     'Documentation': 'https://github.com/govind2220000/image_scraper',
