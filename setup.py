@@ -1,4 +1,11 @@
+from os import lchown
 from setuptools import setup, find_packages
+
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except(IOError, ImportError):
+    long_description = open('README.md').read()
 
 setup(
    name='webscp',
@@ -10,6 +17,7 @@ setup(
    'selenium==3.141.0',
    'Flask==2.0.1',
    'requests==2.22.0'], #external packages as dependencies
+   long_description=long_description,
    python_requires='>=3',
    project_urls={
     'Documentation': 'https://github.com/govind2220000/image_scraper',
