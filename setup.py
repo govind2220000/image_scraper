@@ -1,4 +1,3 @@
-from os import lchown
 from setuptools import setup, find_packages
 
 try:
