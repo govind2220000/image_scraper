@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
    name='webscp',
-   version='1.0',
+   version='1.0.3',
    description='Scrape and email modules to an email id.',
    author='Govind Choudhary <govind2220000@gmail.com>, Sreejith Subhash <sreejithsubhash198@gmail.com>',
    packages=find_packages(),  #same as name
