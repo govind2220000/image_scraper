@@ -8,7 +8,7 @@ except(IOError, ImportError):
 
 setup(
    name='webscp',
-   version='1.0.3',
+   version='1.0.3.1',
    description='Scrape and email modules to an email id.',
    author='Govind Choudhary, Sreejith Subhash',
    author_email="govind2220000@gmail.com, sreejithsubhash198@gmail.com",
